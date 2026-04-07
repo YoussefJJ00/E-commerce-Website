@@ -12,7 +12,6 @@ A full-stack e-commerce platform with a Spring Boot REST API backend and an Angu
 
 - [Overview](#overview)
 - [Features](#features)
-- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Database & API Notes](#database--api-notes)
@@ -77,13 +76,6 @@ E-commerce Website is a comprehensive e-commerce platform designed for product, 
 - All endpoints tested with **Postman**
 - Backend verified with **XAMPP/MySQL** environment
 - Production-ready API documentation
-
-## Screenshots
-
-### Login Page
-![Login Interface](https://raw.githubusercontent.com/YoussefJJ00/E-commerce-Website/main/screenshots/login-page.png)
-
-*E-commerce application login interface with username and password fields.*
 
 ## Tech Stack
 
