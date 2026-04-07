@@ -1,0 +1,48 @@
+<body class="produit-dashboard">
+  <!-- Navbar -->
+  <app-header></app-header>
+  <!-- End Navbar -->
+  <aside>
+      <app-sidebar></app-sidebar>
+  </aside>
+  <main class="main-content">
+      <div class="content-container">
+          <section class="form-section">
+              <h2>Ajouter Produit</h2>
+              <div class="form-card">
+                  <form role="form" [formGroup]="form">
+                      <label for="name">Name</label>
+                      <div class="input-group">
+                          <input type="text" id="name" formControlName="name">
+                      </div>
+                      <label for="price">Prix</label>
+                      <div class="input-group">
+                          <input type="number" id="price" formControlName="price">
+                      </div>
+                      <label for="idcat">Catégorie</label>
+                      <div class="input-group">
+                          <select id="idcat" formControlName="idcat">
+                              <option *ngFor="let s of listcategory" [value]="s.id">{{s.name}}</option>
+                          </select>
+                      </div>
+                      <label for="disponible">Disponible</label>
+                      <div class="input-group">
+                          <select id="disponible" formControlName="disponible">
+                              <option [value]="true">true</option>
+                              <option [value]="false">false</option>
+                          </select>
+                      </div>
+                      <label for="file">Picture</label>
+                      <div class="input-group">
+                          <input type="file" id="file" name="file" (change)="handleFileInput($event)">
+                      </div>
+                      <div class="form-actions text-center">
+                          <button type="button" (click)="creation()">Create</button>
+                      </div>
+                  </form>
+              </div>
+          </section>
+      </div>
+      <app-footer></app-footer>
+  </main>
+</body>

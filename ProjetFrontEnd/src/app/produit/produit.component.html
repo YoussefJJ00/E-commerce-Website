@@ -1,0 +1,49 @@
+<body class="produit-dashboard">
+  <!-- Navbar -->
+  <app-header></app-header>
+  <!-- End Navbar -->
+  <aside>
+    <app-sidebar></app-sidebar>
+  </aside>
+  <main class="main-content">
+    <div class="content-container">
+      <section class="products-section">
+        <h2>Produits</h2>
+        <div class="product-actions">
+          <button type="button"><a routerLink="/addproduit">Ajouter</a></button>
+        </div>
+        <div class="product-list">
+          <table>
+            <thead>
+              <tr>
+                <th>Numéro</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Photo</th>
+                <th>Disponible</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of listproduit; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td>
+                  <img src="http://localhost:8085/produit/files/{{p.photo}}" alt="{{p.name}}">
+                </td>
+                <td>{{p.disponible}}</td>
+                <td>
+                  <button type="button" [routerLink]="['/detailproduit', p.id]">View</button>
+                  <button type="button" [routerLink]="['/updateproduit', p.id]">Update</button>
+                  <button type="button" (click)="delete(p.id)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <app-footer></app-footer>
+  </main>
+</body>

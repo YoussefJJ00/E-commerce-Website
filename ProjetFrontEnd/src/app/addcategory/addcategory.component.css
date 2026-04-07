@@ -1,0 +1,97 @@
+/* General Styles */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2d3250; /* Background color */
+}
+
+h2 {
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #424769;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    margin-right: 200px;
+    margin-left: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+/* Dashboard Layout */
+.category-dashboard {
+    display: flex;
+}
+
+/* Sidebar Styles */
+aside {
+    width: 250px;
+}
+
+/* Main Content Styles */
+.category-main-content {
+    margin-left: 30px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    margin-top: 30px;
+}
+
+/* Content Container */
+.category-content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Form Section */
+.category-form-section {
+    background-color: #424769; /* Matching section background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   
+}
+
+/* Form Card */
+.category-form-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Group */
+.category-input-group {
+    margin-bottom: 15px;
+}
+
+/* Input Fields */
+.category-input-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Button Styles */
+button {
+    background-color: #f9b17a;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #d3986b;
+}
+
+/* Text Centering */
+.category-text-center {
+    text-align: center;
+}

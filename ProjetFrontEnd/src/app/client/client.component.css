@@ -1,0 +1,143 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2d3250;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #424769;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    margin-right: 200px;
+    margin-left: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+  }
+  
+  .produit-dashboard {
+    display: flex;
+  }
+  
+  aside {
+    width: 250px;
+  }
+  
+  .main-content {
+    margin-left: 30px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    margin-top: 30px;
+  }
+  
+  .content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .main-content {
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .content-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  button {
+    background-color: #f9b17a;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  button a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  button:hover {
+    background-color: #d3986b;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #424769;
+    color: white;
+    font-weight: bold;
+  }
+  
+  tbody tr {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tbody tr:hover {
+    background-color: #e1e1e1;
+  }
+  
+  td img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  td button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  td button:hover {
+    background-color: #c0392b;
+  }
+  
+  td button:first-child {
+    background-color: #2ecc71;
+  }
+  
+  td button:first-child:hover {
+    background-color: #27ae60;
+  }
+  
+  td button:nth-child(2) {
+    background-color: #f39c12;
+  }
+  
+  td button:nth-child(2):hover {
+    background-color: #e67e22;
+  }
+  

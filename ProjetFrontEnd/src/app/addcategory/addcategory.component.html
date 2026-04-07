@@ -1,0 +1,33 @@
+<body class="category-dashboard">
+  <!-- Sidebar -->
+  <aside>
+      <app-sidebar></app-sidebar>
+  </aside>
+  <!-- Main Content -->
+  <main class="category-main-content">
+      <!-- Navbar -->
+      <app-header></app-header>
+      <!-- End Navbar -->
+      <div class="category-content-container">
+          <section class="category-form-section">
+              <h2>Ajouter Category</h2>
+              <div class="category-form-card">
+                  <form role="form" [formGroup]="form">
+                      <label for="name">Name</label>
+                      <div class="category-input-group">
+                          <input type="text" id="name" formControlName="name">
+                      </div>
+                      <label for="description">Description</label>
+                      <div class="category-input-group">
+                          <input type="text" id="description" formControlName="description">
+                      </div>
+                      <div class="category-form-actions category-text-center">
+                          <button type="button" (click)="createcategory()">Create</button>
+                      </div>
+                  </form>
+              </div>
+          </section>
+      </div>
+      <app-footer></app-footer>
+  </main>
+</body>

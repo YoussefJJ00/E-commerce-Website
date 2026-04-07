@@ -1,0 +1,24 @@
+<div class="navbar">
+  <div class="container">
+    <button class="nav-btn home-btn" routerLink="/" *ngIf="id==null">
+      <i class="bi bi-house-fill"></i>
+    </button>
+    <button class="nav-btn home-btn" routerLink="/homeclient" *ngIf="id!=null && role=='client' ">
+      <i class="bi bi-house-fill"></i>
+    </button>
+    <button class="nav-btn home-btn" routerLink="/home" *ngIf="id!=null && role=='admin' ">
+      <i class="bi bi-house-fill"></i>
+    </button>
+    
+    <!-- Centered logo -->
+    <div class="logo-container">
+      <img src="..\assets\img\logoweb.png" alt="Logo" class="logo">
+    </div>
+    
+    <ul>
+      <li><button *ngIf="id==null" class="nav-btn" routerLink="/login"><i class="bi bi-box-arrow-in-right"></i>Login</button></li>
+      <li><button *ngIf="id==null" class="nav-btn" routerLink="/signup"><i class="bi bi-person-plus"></i>Signup</button></li>
+      <li><button *ngIf="id!=null" class="nav-btn" (click)="logout()"><i class="bi bi-box-arrow-right"></i>logout</button></li>
+    </ul>
+  </div>
+</div>

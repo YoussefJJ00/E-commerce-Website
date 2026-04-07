@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <ul>
+    <li>
+      <a routerLink="/homeclient">
+        <div><i class="bi bi-house-door"></i></div> <!-- Bootstrap icon for home -->
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a (click)="profile()">
+        <div><i class="bi bi-person"></i></div> <!-- Bootstrap icon for profile -->
+        <span>Profile</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/panier">
+        <div><i class="bi bi-basket"></i></div> <!-- Bootstrap icon for shopping cart -->
+        <span>Panier</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="role === 'admin' ? ['/hiscmd'] : ['/hiscmd_client']">
+        <div><i class="bi bi-basket"></i></div> <!-- Bootstrap icon for shopping cart -->
+        <span>Historique des achats</span>
+      </a>
+    </li>
+  </ul>
+</div>

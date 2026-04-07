@@ -1,0 +1,43 @@
+<body class="produit-dashboard">
+  <app-header></app-header>
+
+  <aside>
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <main class="main-content">
+    <div class="content-container">
+      <section class="form-section">
+        <h2>Modifier Client</h2>
+        <div class="form-card">
+          <form role="form" [formGroup]="form">
+            <label>Name</label>
+            <div class="input-group">
+              <input type="text" formControlName="username">
+            </div>
+            <label>Email</label>
+            <div class="input-group">
+              <input type="email" formControlName="email">
+            </div>
+            <label>Phone</label>
+            <div class="input-group">
+              <input type="number" formControlName="phone">
+            </div>
+            <label>Password</label>
+            <div class="input-group">
+              <input type="password" formControlName="password">
+            </div>
+            <label>Picture</label>
+            <div class="input-group">
+              <input type="file" name="file" (change)="handleFileInput($event)">
+            </div>
+            <div class="text-center">
+              <button type="button" (click)="modification()">Modifier</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <app-footer></app-footer>
+  </main>
+</body>

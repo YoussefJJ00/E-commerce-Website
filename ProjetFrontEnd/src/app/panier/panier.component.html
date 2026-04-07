@@ -1,0 +1,79 @@
+<aside>
+  <app-sidebar *ngIf="role === 'admin'"></app-sidebar>
+  <app-sidebaragent *ngIf="role === 'client'"></app-sidebaragent>
+</aside>
+<body class="panier-container">
+
+  <app-header></app-header>
+
+  <main class="main-content">
+    <div class="content-container">
+      <div *ngIf="listpc.length > 0; else emptyCart">
+        <div class="product-list">
+          <div class="product-card" *ngFor="let product of listpc">
+            <img class="product-image" src="http://localhost:8085/produit/files/{{product.photo}}" alt="Product Image">
+            <div class="product-details">
+              <h4>{{ product.name }}</h4>
+              <p>Price: {{ product.price }} TND</p>
+              <div class="quantity-selector">
+                <button (click)="decreaseQuantity(product)">-</button>
+                <span>{{ product.quantity }}</span>
+                <button (click)="increaseQuantity(product)">+</button>
+              </div>
+              <button type="button" class="close" aria-label="Close" (click)="cancel(product.id)">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="cart-summary">
+          <h4>Cart Total: {{ calculateTotal() }} TND</h4>
+          <div class="checkout-btn">
+            <button class="btn" type="button" (click)="openOrderDetailsModal()">Commander</button>
+          </div>
+        </div>
+      </div>
+      <ng-template #emptyCart>
+        <div class="empty-cart-message">
+          <img src="../../assets/img/empty.png" alt="Empty Cart Logo">
+          <p>Your cart is empty!!</p>
+        </div>
+      </ng-template>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+
+  <!-- Order Details Modal -->
+  <div id="orderDetailsModal" class="modal" [ngClass]="{'show': showModal}">
+    <div class="modal-content">
+      <span class="close" (click)="closeOrderDetailsModal()">&times;</span>
+      <h2>Order Details</h2>
+      <form role="form" [formGroup]="form" (ngSubmit)="submitOrderDetails()">
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" id="country" formControlName="country" [ngClass]="{'is-invalid': form.get('country')?.invalid && form.get('country')?.touched}">
+          <div *ngIf="form.get('country')?.invalid && form.get('country')?.touched" class="invalid-feedback">
+            Country is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" formControlName="city" [ngClass]="{'is-invalid': form.get('city')?.invalid && form.get('city')?.touched}">
+          <div *ngIf="form.get('city')?.invalid && form.get('city')?.touched" class="invalid-feedback">
+            City is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" formControlName="address" [ngClass]="{'is-invalid': form.get('address')?.invalid && form.get('address')?.touched}">
+          <div *ngIf="form.get('address')?.invalid && form.get('address')?.touched" class="invalid-feedback">
+            Address is required
+          </div>
+        </div>
+        <button type="submit" class="btn">Submit Order</button>
+      </form>
+    </div>
+  </div>
+
+</body>

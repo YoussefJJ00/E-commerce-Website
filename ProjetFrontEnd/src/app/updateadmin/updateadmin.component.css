@@ -1,0 +1,103 @@
+/* General Page Styles */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2d3250; /* Dark blue background */
+}
+
+/* Heading Styles */
+h2 {
+    font-size: 24px;
+    color: #ffffff; /* White text color */
+    background-color: #424769; /* Darker blue background for heading */
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    margin-right: 200px;
+    margin-left: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    font-weight: bold;
+}
+
+/* Dashboard Layout */
+.admin-dashboard {
+    display: flex; /* Flex layout for sidebar and content */
+}
+
+/* Sidebar Styles */
+aside {
+    width: 250px; /* Fixed width for the sidebar */
+}
+
+/* Main Content Layout */
+.main-content {
+    margin-left: 30px;
+    padding: 20px;
+    width: calc(100% - 250px); /* Adjust width considering sidebar */
+    margin-top: 30px;
+}
+
+/* Content Container */
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Space between elements */
+}
+
+/* Form Section Styles */
+.form-section {
+    background-color: #424769; /* Matching section background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    
+}
+
+/* Form Card Styles */
+.form-card {
+    background-color: #ffffff; /* White background for form card */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Input Group Styles */
+.input-group {
+    margin-bottom: 15px; /* Space below each input group */
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="file"],
+select {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin: 5px 0; /* Margin above and below inputs */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light border */
+}
+
+/* Button Styles */
+button {
+    background-color: #f9b17a; /* Light orange background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding around button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+}
+
+button:hover {
+    background-color: #d3986b; /* Darker orange on hover */
+}
+
+/* Text Centering */
+.text-center {
+    text-align: center; /* Center-aligned text */
+}

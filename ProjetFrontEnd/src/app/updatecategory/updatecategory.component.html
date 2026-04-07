@@ -1,0 +1,31 @@
+<body class="category-dashboard">
+  <aside>
+      <app-sidebar></app-sidebar>
+  </aside>
+  <main class="main-content">
+      <!-- Navbar -->
+      <app-header></app-header>
+      <!-- End Navbar -->
+      <div class="content-container">
+          <section class="form-section">
+              <h2>Modifier Category</h2>
+              <div class="form-card">
+                  <form role="form" [formGroup]="form">
+                      <label for="name">Name</label>
+                      <div class="input-group">
+                          <input type="text" id="name" formControlName="name">
+                      </div>
+                      <label for="description">Description</label>
+                      <div class="input-group">
+                          <input type="text" id="description" formControlName="description">
+                      </div>
+                      <div class="form-actions text-center">
+                          <button type="button" (click)="modification()">Modifier</button>
+                      </div>
+                  </form>
+              </div>
+          </section>
+      </div>
+      <app-footer></app-footer>
+  </main>
+</body>

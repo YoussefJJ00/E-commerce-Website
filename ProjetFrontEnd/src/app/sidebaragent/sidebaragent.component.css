@@ -1,0 +1,95 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+/* sidebar.component.css */
+
+/* Default styles for larger screens */
+.sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background-color: #424769;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  margin-top: 30px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #f9b17a;
+  color: #424769;
+}
+
+.sidebar a div {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 10px;
+}
+
+.sidebar a span {
+  vertical-align: middle;
+}
+
+.sidebar a i {
+  font-size: 1.2rem;
+}
+
+.logo-container {
+  width: 150px;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure logo fits within container */
+.logo-container img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
+  }
+
+  .sidebar.active {
+    width: 200px;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #424769;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+}

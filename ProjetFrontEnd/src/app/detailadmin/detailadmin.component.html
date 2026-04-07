@@ -1,0 +1,35 @@
+<body class="produit-dashboard">
+  <app-header></app-header>
+
+  <aside>
+    <app-sidebar ></app-sidebar>
+  </aside>
+
+  <main class="main-content">
+    <div class="content-container">
+      <section class="profile-section">
+        <h2>Profile Admin</h2>
+        <div class="profile-card">
+          <div class="profile-photo">
+            <img src="http://localhost:8085/admin/files/{{oneadmin.photo}}" alt="Admin Photo">
+          </div>
+          <div class="profile-details">
+            <div class="details">
+              <h6>Username:</h6>
+              <p>{{oneadmin.username}}</p>
+            </div>
+            <div class="details">
+              <h6>Email:</h6>
+              <p>{{oneadmin.email}}</p>
+            </div>
+            <div class="details">
+              <button  type="button" [routerLink]="['/updateadmin', oneadmin.id]">Update</button>
+            </div>
+   
+          </div>
+        </div>
+      </section>
+    </div>
+    <app-footer></app-footer>
+  </main>
+</body>

@@ -1,0 +1,32 @@
+<body>
+  <aside *ngIf="id!=null">
+    <app-sidebaragent></app-sidebaragent>
+  </aside>
+  
+  <main>
+    <!-- Navbar -->
+    <app-header></app-header>
+   
+    <!-- End Navbar -->
+    <div class="container" *ngIf="id==null">
+      <div class="product-list">
+        <div class="product-card" *ngFor="let p of listproduit | paginate:{itemsPerPage:20,currentPage:c}; ">
+          <div class="product-image">
+            <img src="http://localhost:8085/produit/files/{{p.photo}}" alt="{{p.name}}">
+          </div>
+          <div class="product-details">
+            <h6>{{p.name}} </h6>
+            <p>{{p.price}} TND</p>
+            <hr>
+            <div class="product-actions">
+              <a type="button" routerLink="login">Buy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pagination-controls (pageChange)="c=$event"></pagination-controls>
+      <app-footer></app-footer>
+    </div>
+
+  </main>
+</body>

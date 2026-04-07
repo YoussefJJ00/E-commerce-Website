@@ -1,0 +1,47 @@
+<body class="produit-dashboard">
+  <!-- Navbar -->
+  <app-header></app-header>
+  <!-- End Navbar -->
+  <aside>
+    <app-sidebar></app-sidebar>
+  </aside>
+  <main class="main-content">
+    <div class="content-container">
+      <section class="products-section">
+        <h2>Clients</h2>
+        <div class="product-actions">
+          <button type="button"><a routerLink="/addclient">Ajouter</a></button>
+        </div>
+        <div class="product-list">
+          <table>
+            <thead>
+              <tr>
+                <th>Numéro</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Photo</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of listclient; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{a.username}}</td>
+                <td>{{a.email}}</td>
+                <td>
+                  <img src="http://localhost:8085/client/files/{{a.photo}}" alt="{{a.username}}">
+                </td>
+                <td>
+                  <button type="button" [routerLink]="['/detailclient', a.id]">View</button>
+                  <button type="button" [routerLink]="['/updateclient', a.id]">Update</button>
+                  <button type="button" (click)="delete(a.id)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <app-footer></app-footer>
+  </main>
+</body>

@@ -1,0 +1,44 @@
+<aside>
+  <app-sidebar *ngIf="role=='admin'"></app-sidebar>
+  <app-sidebaragent *ngIf="role=='client'"></app-sidebaragent>
+</aside>
+<body class="produit-dashboard">
+
+
+  <app-header></app-header>
+  
+  <main class="main-content">
+    
+    <div class="content-container">
+      
+      <h2>Profile Client</h2>
+      <section class="profile-section">
+        
+        <div class="profile-card">
+          <div class="profile-photo">
+            <img src="http://localhost:8085/client/files/{{oneclient.photo}}" alt="Profile Photo">
+          </div>
+          <div class="profile-details">
+            <div class="details">
+              <h6>Username:</h6>
+              <p>{{oneclient.username}}</p>
+            </div>
+            <div class="details">
+              <h6>Email:</h6>
+              <p>{{oneclient.email}}</p>
+            </div>
+            <div class="details">
+              <h6>Phone:</h6>
+              <p>{{oneclient.phone}}</p>
+            </div>
+            <div class="details">
+              <button type="button" [routerLink]="['/updateclient', oneclient.id]">Update</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</body>

@@ -1,0 +1,39 @@
+<html>
+<app-header></app-header>
+
+<!-- Sidebar -->
+<app-sidebaragent></app-sidebaragent>
+<body>
+  
+
+<!-- Main Content -->
+<main class="container">
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Order Date</th>
+          <th>Product Names</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cmd of listcmd">
+          <td>{{ cmd.id }}</td>
+          <td>{{ cmd.ordredate | date }}</td>
+          <td>
+            <ul>
+              <li>{{ cmd.produitNames }}</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+</body>
+
+<!-- Footer -->
+<app-footer></app-footer>
+</html>

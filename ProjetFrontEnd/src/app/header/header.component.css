@@ -1,0 +1,111 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+body,html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #2d3250; /* Dark blue background */
+}
+
+.navbar {
+  background-color: #424769; /* Blue background for the navbar */
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li {
+  margin-left: 20px; /* Adjust spacing between menu items */
+}
+
+.nav-btn {
+  background-color: #f9b17a; /* Blue background for buttons */
+  color: #2d3250;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem; /* Adjust button text size */
+}
+
+.nav-btn i {
+  font-size: 1.2rem; /* Adjust icon size */
+  margin-right: 5px; /* Adjust spacing between icon and text */
+}
+
+.nav-btn span {
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  background-color: #d3986b; /* Darker blue on hover */
+}
+
+.nav-btn:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.home-btn {
+  padding: 10px; /* Smaller padding for home button */
+  margin-right: 20px; /* Space between home button and the rest of the navbar */
+}
+
+.home-btn i {
+  margin-right: 0; /* No margin right for home icon */
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  position: relative; /* Position relative for centering logo */
+}
+.logo-container {
+  position: absolute; /* Center the logo in the navbar */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  height: 50px; /* Adjust the height as needed */
+  width: auto;  /* Maintain aspect ratio */
+  border: 2px solid #f9b17a; /* Add a border around the logo */
+  border-radius: 50%; /* Make the logo circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; /* Smooth transition effects */
+  padding: 5px; /* Space between the logo image and the border */
+  background-color: #ffffff; /* White background for the logo area */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Slightly enlarge the logo on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Increase shadow intensity on hover */
+  border-color: #d3986b; /* Change border color on hover */
+}

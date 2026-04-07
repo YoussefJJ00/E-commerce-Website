@@ -1,0 +1,47 @@
+<body class="admin-dashboard">
+  <aside>
+      <app-sidebar></app-sidebar>
+  </aside>
+  <main class="main-content">
+      <!-- Navbar -->
+      <app-header></app-header>
+      <!-- End Navbar -->
+      <div class="content-container">
+          <section class="form-section">
+              <h2>Modifier Admin</h2>
+              <div class="form-card">
+                  <form role="form" [formGroup]="form">
+                      <label for="username">Name</label>
+                      <div class="input-group">
+                          <input type="text" id="username" formControlName="username">
+                      </div>
+                      <label for="email">Email</label>
+                      <div class="input-group">
+                          <input type="email" id="email" formControlName="email">
+                      </div>
+                      <label for="phone">Phone</label>
+                      <div class="input-group">
+                          <input type="number" id="phone" formControlName="phone">
+                      </div>
+                      <label for="adress2">Address</label>
+                      <div class="input-group">
+                          <input type="text" id="adress2" formControlName="adress2">
+                      </div>
+                      <label for="password">Password</label>
+                      <div class="input-group">
+                          <input type="password" id="password" formControlName="password">
+                      </div>
+                      <label for="file">Picture</label>
+                      <div class="input-group">
+                          <input type="file" id="file" name="file" (change)="handleFileInput($event)">
+                      </div>
+                      <div class="form-actions text-center">
+                          <button type="button" (click)="modification()">Modifier</button>
+                      </div>
+                  </form>
+              </div>
+          </section>
+      </div>
+      <app-footer></app-footer>
+  </main>
+</body>

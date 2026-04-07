@@ -1,0 +1,44 @@
+<body class="category-dashboard">
+  <aside>
+    <app-sidebar></app-sidebar>
+  </aside>
+  <main class="main-content">
+    <!-- Navbar -->
+    <app-header></app-header>
+    <!-- End Navbar -->
+    <div class="content-container">
+      <h2>Category</h2>
+      <section class="category-section">
+        
+        <div class="category-actions">
+          <button type="button"><a routerLink="/addcategory">Ajouter</a></button>
+        </div>
+        <div class="category-list">
+          <table>
+            <thead>
+              <tr>
+                <th>Numero</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of listcategory; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{c.name}}</td>
+                <td>{{c.description}}</td>
+                <td>
+                  <button type="button" [routerLink]="['/detailcategory', c.id]">View</button>
+                  <button type="button" [routerLink]="['/updatecategory', c.id]">Update</button>
+                  <button type="button" (click)="delete(c.id)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <app-footer></app-footer>
+  </main>
+</body>

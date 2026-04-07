@@ -1,0 +1,71 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: #424769; /* Blue background for sidebar */
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    margin-top: 30px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .sidebar a:hover {
+    background-color: #f9b17a;
+    color: #424769;
+  }
+  
+  .sidebar a div {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 10px;
+  }
+  
+  .sidebar a span {
+    vertical-align: middle;
+  }
+  
+  .sidebar a i {
+    font-size: 1.2rem;
+  }
+  .logo-container {
+    width: 150px; /* Adjust width as needed */
+    height: 100px;
+    
+    left: 0px;
+    top: 0px;
+    
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  
+  .logo-container img {
+    max-width: 80%;
+    max-height: 80%;
+    margin-left: 25%;
+  }

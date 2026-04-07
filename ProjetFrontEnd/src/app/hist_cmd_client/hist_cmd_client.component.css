@@ -1,0 +1,120 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2d3250;
+  }
+  
+  .admin-dashboard {
+    display: flex;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #424769;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    margin-right: 200px;
+    margin-left: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+  }  
+  
+  .main-content {
+    margin-left: 250px; /* Space for the sidebar */
+    padding: 20px;
+    width: calc(100% - 250px); /* Adjust width to account for the sidebar */
+    margin-top: 50px;
+    
+  }
+  
+  .content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  section {
+    background-color: #424769;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  
+  .order-list, .client-list, .product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .order, .client, .product {
+    background-color: #2d3250;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .order p, .client, .product p {
+    color: #ffffff;
+    margin: 5px 0;
+  }
+  
+  .product img {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .product {
+    flex: 1 1 calc(25% - 20px); /* Four products per row */
+    max-width: calc(25% - 20px);
+  }
+  
+  @media (max-width: 768px) {
+    .main-content {
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .content-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .product {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+  .totals-section {
+    background-color: #424769;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .totals-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .totals-section p {
+    font-size: 16px;
+  }
+  
+  

@@ -1,0 +1,32 @@
+<body>
+  <main class="login-container">
+    <!-- Navbar -->
+    <app-header></app-header>
+    <!-- End Navbar -->
+    <div class="login-box">
+      <div class="login-header">
+        <div>
+          <h3>Login</h3>
+        </div>
+      </div>
+      <div class="login-form">
+        <form role="form" [formGroup]="form">
+          <label>Username</label>
+          <div class="input-group">
+            <input type="text" formControlName="username" required />
+          </div>
+          <label>Password</label>
+          <div class="input-group">
+            <input type="password" formControlName="password" required />
+          </div>
+          <div class="button-group">
+            <button type="button" class="btn-login" (click)="login()">Login</button>
+            <p id="ntf">Please sign up if you don't have an account</p>
+            <button type="button" class="btn-signup" (click)="signup()">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </main>
+</body>

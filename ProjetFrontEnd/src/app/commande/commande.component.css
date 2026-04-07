@@ -1,0 +1,47 @@
+/* Ensure your styles match the rest of your application's design */
+
+body, html {
+
+  background-color: #2d3250;
+}
+.container {
+
+    max-width: 1200px;
+    margin-top: 60px;
+    padding: 20px;
+    margin-left: 250px; /* Adjust as per your sidebar width */
+  }
+  
+  .table-container {
+    margin: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #e9f5fe;
+  }
+  
