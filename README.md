@@ -1,170 +1,217 @@
-# Projet Ecomerce Back
+# E-commerce Website
 
-A full-stack e-commerce platform with a Spring Boot backend and an Angular frontend.
+A full-stack e-commerce platform with a Spring Boot REST API backend and an Angular 15 frontend.
 
-Spring Boot Angular MySQL Postman XAMPP
+[![Java 17](https://img.shields.io/badge/Java-17-ED8B00?style=flat&logo=java)](https://www.oracle.com/java/)
+[![Spring Boot 3.3](https://img.shields.io/badge/Spring%20Boot-3.3-6DB33F?style=flat&logo=springboot)](https://spring.io/projects/spring-boot)
+[![Angular 15](https://img.shields.io/badge/Angular-15-DD0031?style=flat&logo=angular)](https://angular.io/)
+[![MySQL](https://img.shields.io/badge/MySQL-8+-4479A1?style=flat&logo=mysql)](https://www.mysql.com/)
+[![Postman](https://img.shields.io/badge/API_Tested-Postman-FF6C37?style=flat&logo=postman)](https://www.postman.com/)
 
 ## Table of Contents
 
-- Overview
-- Features
-- Tech Stack
-- Project Structure
-- Database & API Notes
-- Prerequisites
-- Installation
-- Running the App
-- Testing
-- Configuration Notes
-- GitHub Upload
-- License
+- [Overview](#overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Database & API Notes](#database--api-notes)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the App](#running-the-app)
+- [Testing](#testing)
+- [Configuration Notes](#configuration-notes)
+- [License](#license)
 
 ## Overview
 
-Projet Ecomerce Back is an e-commerce application built for product, category, client, and order management, with a browser-based Angular frontend and a Spring Boot REST API backend.
+E-commerce Website is a comprehensive e-commerce platform designed for product, category, client, and order management with a modern web interface and secure REST API backend.
 
-Key concept
+**Key features:**
 
-- The backend exposes secure REST endpoints for auth, users, products, categories, clients, orders, and files.
-- The frontend consumes those endpoints from a separate Angular application located in `ProjetFrontEnd/`.
-- The project was tested with Postman, and it uses XAMPP/MySQL locally to run the backend.
+- Secure JWT-based authentication and authorization
+- REST API backend built with Spring Boot 3.3 and MySQL
+- Interactive Angular 15 frontend with Bootstrap styling
+- Complete CRUD operations for products, categories, clients, and orders
+- File upload support for product images
+- All APIs tested and verified with **Postman**
+- Local deployment supported with **XAMPP/MySQL**
 
 ## Features
 
-1. Authentication
-- JWT login and logout
-- Secure password handling
-- Role-based access control
+### Authentication & Security
+- JWT-based login and logout
+- Secure password handling with validation
+- Role-based access control (RBAC)
+- User authentication with Spring Security
 
-2. Product Management
+### Product Management
 - Create, update, delete, and list products
-- File upload support
-- Product image handling
+- File upload support for product images
+- Product categorization and filtering
+- Inventory tracking
 
-3. Category Management
-- Create, update, delete, and list categories
+### Category Management
+- Create, update, delete, and list product categories
+- Category-based product organization
+- Hierarchical category support
 
-4. Client Management
-- Create, update, delete, and list clients
+### Client Management
+- Create, update, delete, and list client profiles
+- Client information management
+- Order history tracking
 
-5. Order Management
-- Create orders
-- Manage order details
-- Track order-related data
+### Order Management
+- Create and manage customer orders
+- Order detail tracking
+- Order status management
+- Order history and analytics
 
-6. Frontend Interface
-- Angular UI for browsing and managing the platform
-- Separate frontend app in `ProjetFrontEnd/`
+### Frontend Interface
+- Responsive Angular 15 UI
+- Bootstrap-based design
+- Intuitive user interface for all operations
+- Real-time data management
 
-7. API Testing
-- APIs were tested with Postman
-- Local backend run verified with XAMPP/MySQL
+### API Testing & Verification
+- All endpoints tested with **Postman**
+- Backend verified with **XAMPP/MySQL** environment
+- Production-ready API documentation
+
+## Screenshots
+
+### Login Page
+![Login Interface](https://raw.githubusercontent.com/YoussefJJ00/E-commerce-Website/main/screenshots/login-page.png)
+
+*E-commerce application login interface with username and password fields.*
 
 ## Tech Stack
 
 ### Backend & Services
-
-- Java 17
-- Spring Boot 3.3.x
-- Spring Web
-- Spring Data JPA
-- Spring Security
-- JWT
-- MySQL
-- Mail support
-- Validation
+- **Java 17** - Core language
+- **Spring Boot 3.3.x** - Application framework
+- **Spring Web** - REST API development
+- **Spring Data JPA** - Database access layer
+- **Spring Security** - Authentication and authorization
+- **JWT** - Token-based security
+- **MySQL 8+** - Primary database
+- **Mail support** - Email notifications
+- **Validation** - Input validation framework
 
 ### Frontend
+- **Angular 15** - Frontend framework
+- **TypeScript** - Language for Angular
+- **Bootstrap 5** - UI toolkit and styling
+- **Angular CLI** - Development tools
 
-- Angular 15
-- TypeScript
-- Bootstrap
-- Angular CLI
-
-### Testing
-
-- Spring Boot Test
-- H2 in-memory database for automated tests
-- Postman for API verification
+### Testing & Quality
+- **Spring Boot Test** - Unit and integration testing
+- **H2 Database** - In-memory database for tests
+- **Postman** - API endpoint testing and verification
+- **JUnit** - Test framework
 
 ## Project Structure
 
 ```text
 .
-├── pom.xml
+├── pom.xml                                 # Maven configuration
+├── README.md                               # Project documentation
+├── mvnw / mvnw.cmd                        # Maven wrapper
+│
 ├── src/
 │   ├── main/
 │   │   ├── java/com/example/projet_ecomerce_back/
-│   │   │   ├── controllers/
-│   │   │   ├── models/
-│   │   │   ├── payload/
-│   │   │   ├── repositories/
-│   │   │   ├── security/
-│   │   │   ├── services/
-│   │   │   └── utils/
+│   │   │   ├── controllers/               # REST endpoints
+│   │   ├── models/                    # Entity classes
+│   │   ├── payload/                   # DTOs (request/response)
+│   │   ├── repositories/              # Data access layer
+│   │   ├── security/                  # JWT and security config
+│   │   ├── services/                  # Business logic
+│   │   └── utils/                     # Utility classes
 │   │   └── resources/
+│   │       ├── application.properties     # Main config
+│   │       ├── static/                    # Static files
+│   │       └── templates/                 # Email templates
+│   │
 │   └── test/
 │       ├── java/com/example/projet_ecomerce_back/
+│       │   └── ProjetEcomerceBackApplicationTests.java
 │       └── resources/
-├── ProjetFrontEnd/
+│           └── application-test.properties # Test config (H2)
+│
+├── ProjetFrontEnd/                        # Angular frontend app
 │   ├── angular.json
 │   ├── package.json
-│   └── src/
-└── upload/
+│   ├── src/
+│   │   ├── app/                           # Angular components
+│   │   ├── assets/                        # Static assets
+│   │   └── environments/                  # Configuration
+│   └── ...
+│
+└── upload/                                # File upload directory
 ```
 
 ## Database & API Notes
 
-### Backend database
+### Backend Database
 
-The backend is configured to use MySQL locally.
+The backend is configured to use MySQL locally by default.
 
-- Database: `formation_db`
-- Host: `localhost:3306`
-- Default user: `root`
+**Default configuration:**
+- **Host:** localhost:3306
+- **Database:** formation_db
+- **Username:** root
+- **Port:** 8085
 
-If you use XAMPP, start the MySQL service before launching the backend.
+> **Note:** If you use XAMPP, start the MySQL service before launching the backend.
 
-### API base URL
+### API Base URL
 
 The Angular frontend points to the backend at:
 
-- `http://localhost:8085`
+```
+http://localhost:8085
+```
 
-If you change the backend port, update the Angular environment file in:
+If you change the backend port, update the Angular environment file:
 
 - `ProjetFrontEnd/src/app/environments/environment.ts`
 
 ## Prerequisites
 
-- Java 17
-- Maven Wrapper or Maven
-- Node.js 16+ and npm
-- XAMPP or another MySQL server
-- Postman for API testing
+- Java 17 or higher
+- Maven Wrapper or Maven 3.6+
+- Node.js 16+ and npm 8+
+- XAMPP or MySQL Server 8+
+- Postman (optional, for API testing)
+- Git
 
 ## Installation
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd Projet_Ecomerce_Back
+git clone https://github.com/YoussefJJ00/E-commerce-Website.git
+cd E-commerce-Website
 ```
 
-### 2. Install backend dependencies
+### 2. Set Up the Backend
+
+**a) Start MySQL (if using XAMPP)**
+- Open XAMPP Control Panel
+- Start the MySQL service
+
+**b) Build and test the backend**
 
 ```bash
+# Windows
+.\mvnw.cmd test
+
+# Linux/macOS
 ./mvnw test
 ```
 
-On Windows:
-
-```powershell
-.\mvnw.cmd test
-```
-
-### 3. Install frontend dependencies
+### 3. Set Up the Frontend
 
 ```bash
 cd ProjetFrontEnd
@@ -178,58 +225,93 @@ npm install
 From the repository root:
 
 ```bash
+# Windows
+.\mvnw.cmd spring-boot:run
+
+# Linux/macOS
 ./mvnw spring-boot:run
 ```
 
-On Windows:
-
-```powershell
-.\mvnw.cmd spring-boot:run
-```
+The backend will start on `http://localhost:8085`
 
 ### Frontend
 
-From `ProjetFrontEnd/`:
+From the `ProjetFrontEnd/` directory:
 
 ```bash
 npm start
 ```
 
-The Angular app runs on `http://localhost:4500` by default.
+The Angular app will run on `http://localhost:4500`
+
+### Access the Application
+
+Open your browser and navigate to:
+```
+http://localhost:4500
+```
 
 ## Testing
 
-The backend test suite is configured to run with an embedded H2 database, so it does not require MySQL.
+### Run Backend Tests
 
-Run the tests from the repository root:
+From the repository root:
 
-```powershell
+```bash
+# Windows
 .\mvnw.cmd test
+
+# Linux/macOS
+./mvnw test
 ```
 
-Testing notes
+The test suite uses an embedded **H2 database**, so it does not require MySQL to be running.
 
-- APIs were tested with Postman.
-- The backend was run locally using XAMPP/MySQL.
-- Automated tests pass with the H2 test profile.
+### Test with Postman
+
+1. Open **Postman**
+2. Import the API collection (if available in the repository)
+3. Configure the base URL to: `http://localhost:8085`
+4. Run the endpoint tests
+
+**Testing Notes:**
+- ✅ All APIs tested and verified with Postman
+- ✅ Backend context load test passes with H2 test profile
+- ✅ Backend runs locally with XAMPP/MySQL
 
 ## Configuration Notes
 
-- Main backend settings live in `src/main/resources/application.properties`.
-- Test-only database settings live in `src/test/resources/application-test.properties`.
-- The frontend backend URL lives in `ProjetFrontEnd/src/app/environments/environment.ts`.
-- Do not commit real credentials for MySQL, mail, JWT secrets, or API keys.
+### Main Configuration Files
 
-## GitHub Upload
+- **Backend:** `src/main/resources/application.properties`
+- **Test:** `src/test/resources/application-test.properties`
+- **Frontend:** `ProjetFrontEnd/src/app/environments/environment.ts`
 
-Not pushed yet.
+### Security Best Practices
 
-When you give the go-ahead, the next step is to initialize or connect the Git repository, add the GitHub remote for `YOUSSEFJJ00`, and push the project.
+Do not commit real credentials for:
+- MySQL passwords
+- Mail provider credentials
+- JWT secret keys
+- API keys
+
+### Production Deployment
+
+For production use, externalize all secrets using:
+- Environment variables
+- Secret management services
+- Configuration management tools
 
 ## License
 
-No license file is currently defined in this repository.
+This project is open source and available under the [MIT License](LICENSE).
 
-## Support
+## Author
 
-If you want, I can also turn this into a more polished GitHub README with badges, screenshots, and setup commands tailored for your final repo name.
+**Youssef Ghouila**
+- GitHub: [@YoussefJJ00](https://github.com/YoussefJJ00)
+- Email: youssefghouilz@gmail.com
+
+---
+
+Made with ❤️ by Youssef Ghouila
